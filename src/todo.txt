@@ -1,7 +1,12 @@
 1--Dynamically create "todos" (use factories or constructors/classes)
+
+
 2--What kind of properties should todos have?  The following are required at a minimum:
         title, description, dueDate, priority.
         may also consider : notes, checklist
+
+
+        
 3--Projects or seperate lists of todos.  When user first opens app should be a default project or list for all todos to go into.
 4--application logic and dom-interaction should be seperate.
 5--design your own UI but should be able to :
