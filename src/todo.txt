@@ -1,0 +1,18 @@
+1--Dynamically create "todos" (use factories or constructors/classes)
+2--What kind of properties should todos have?  The following are required at a minimum:
+        title, description, dueDate, priority.
+        may also consider : notes, checklist
+3--Projects or seperate lists of todos.  When user first opens app should be a default project or list for all todos to go into.
+4--application logic and dom-interaction should be seperate.
+5--design your own UI but should be able to :
+        View all Projects
+        View all todos in each project (maybe only show a few details on list of todos but can dive into)
+        Expand a todo to view all details
+        Different colors for Different priorities
+        Delete a todo.
+6--can look at todoist, Things, any.do for inspiration
+7--since using webpack consider using libraries such as date-fns
+8--Add persistence with Web Storage API.  localStorage allows to save to users PC, although not perfect, it is a start.
+        Make sure the app doesn't crash if the stored data has been deleted.
+        Can inspect data saved on localStorage using devtools (in devtools Application - storage - Local Storage)
+        localStorage uses JSON which cannot save functions/methods.  Find a way to add methods to the object after retrieving.
