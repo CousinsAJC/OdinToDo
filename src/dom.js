@@ -1,83 +1,73 @@
 import { createTodo } from "./todos.js";
 
+const loadLists = function(){
+    //check for local lists
+}
+
+
 const loadTodoForm = function(){
     const todoDiv = document.createElement("div");
     const todoForm = document.createElement("form");
 
-    const titleDiv = getDiv();
-    titleDiv.classList.add("form");
-    const titleLabel = getLabel();
-    titleLabel.textContent = "Title";
-    const titleInput = getInput();
-    titleDiv.append(titleLabel, titleInput);
-    todoForm.append(titleDiv);
+    todoForm.append(createFormDiv("form", "Title"));
+    todoForm.append(createFormDiv("form", "Description"));
+    todoForm.append(createFormDiv("form", "Due Date"));
+    todoForm.append(createFormDiv("form", "Priority"));
+    todoForm.append(createFormDiv("form", "Notes"));
 
-    const descDiv = getDiv();
-    descDiv.classList.add("form");
-    const descLabel = getLabel();
-    descLabel.textContent = "Description";
-    const descInput = getInput();
-    descDiv.append(descLabel, descInput);
-    todoForm.append(descDiv);
-
-    const dueDateDiv = getDiv();
-    dueDateDiv.classList.add("form");
-    const dueDateLabel = getLabel();
-    dueDateLabel.textContent = "Due Date";
-    const dueDateInput = getInput();
-    dueDateDiv.append(dueDateLabel, dueDateInput);
-    todoForm.append(dueDateDiv);
-
-
-    const priorityDiv = getDiv();
-    priorityDiv.classList.add("form");
-    const priorityLabel = getLabel();
-    priorityLabel.textContent = "Priority";
-    const priorityInput = getInput();
-    priorityDiv.append(priorityLabel, priorityInput);
-    todoForm.append(priorityDiv);
-
-    const notesDiv = getDiv();
-    notesDiv.classList.add("form");
-    const notesLabel = getLabel();
-    notesLabel.textContent = "Notes";
-    const notesInput = getInput(); 
-    notesDiv.append(notesLabel, notesInput);
-    todoForm.append(notesDiv);
-
-    const buttonDiv = getDiv();
-    buttonDiv.classList.add("form");
-    const addTodoButton = getButton();
-    addTodoButton.textContent = "Add to list"
-
+    const buttonDiv = getDiv("form");
+    const addTodoButton = getButton("Add to list");
     addTodoButton.addEventListener("click", (event)=>{
-        //check fields for validity
-        createTodo(titleInput.value, descInput.value, dueDateInput.value, priorityInput.value, notesInput.value);
+        //check for valid inputs
+        createTodo(titleInput.value, descInput.value, dueDateInput.value, priorityInput.value, notesInput.value);        
     })
-
     buttonDiv.append(addTodoButton);
-    todoForm.append(buttonDiv);
 
+    todoForm.append(buttonDiv);
     todoDiv.append(todoForm);
 
     return todoDiv;
 }
 
 
-const getDiv = function(){
-    return document.createElement("div");
+
+
+const createFormDiv = function(classToAdd, text){
+    const thisDiv = getDiv(classToAdd); //indicate class
+    const thisLabel = getLabel(text); //indicate textContent
+    const thisInput = getInput();
+    thisDiv.append(thisLabel, thisInput);
+    return thisDiv;
 }
 
-const getLabel = function(){
-    return document.createElement("label");
+
+const getPara = function(item){
+    const thisPara = document.createElement("p");
+    thisPara.textContent = item;
+    return thisPara;
+}
+
+const getDiv = function(classToAdd){
+    let thisDiv = document.createElement("div");
+    thisDiv.classList.add(classToAdd);
+    return thisDiv;
+}
+
+const getLabel = function(text){
+    let thisLabel = document.createElement("label");
+    thisLabel.textContent = text;
+    return thisLabel;
+
 }
 
 const getInput = function(){
     return document.createElement("input");
 }
 
-const getButton = function(){
-    return document.createElement("button");
+const getButton = function(text){
+    let thisButton = document.createElement("button");
+    thisButton.textContent = text;
+    return thisButton;
 }
 
-export { loadTodoForm };
+export { loadTodoForm, loadLists };

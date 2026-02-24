@@ -1,13 +1,26 @@
+import {domListItem} from "./dom.js";
+
+//init arrays
+const projectsArray = [];
+const todoArray = [];
+
 const createTodo = function(title, desc, dueDate, priority, notes) {
-    const todo = {
-        "title" : title,
-        "desc" : desc,
-        "dueDate" : dueDate,
-        "priority" : priority,
-        "notes" : notes
+    const thisToDo = new todo(title, desc, dueDate, priority, notes);
+    
+    todoArray.push(thisToDo);
+}
+
+class todo {
+    constructor(title, desc, dueDate, priority, notes){
+        this.title = title;
+        this.desc = desc;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.notes = notes;
     }
 
-    //add todo to array or JSON or both
+
+    
 }
 
 export { createTodo };
