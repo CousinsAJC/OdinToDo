@@ -1,22 +1,41 @@
-import { loadTodoForm, loadLists } from "./dom.js";
-import "./styles.css";
+import { getBody } from "./dom/dom.js";
+import { addHeader } from "./dom/header.js";
+import { addSidebar } from "./dom/sidebarDom.js";
+import { addMain } from "./dom/main.js";
+import { addFooter } from "./dom/footer.js";
+import { addPopup } from "./dom/popup.js";
+import { getDiv } from "./dom/dom.js";
+import "./styles/styles.css";
 
-//init webpage/array vars
-const header = document.querySelector("header");
-const body = document.querySelector("body");
+
+//init variables/arrays
 
 
-//check for saved projects on local pc
-//if local projects, load them into array
-//if local projects, display them to the dom
-//if not local projects load default page
 
-//Check for saved todos on local pc
-//if local todos, load them into array
-//if local todos, display them to the dom
-//if not local todos load default page
 
-//prepare to take new todos from user
-    //header.append(loadLists());
-body.append(loadTodoForm());
+//init webpage sections and show on dom
+const body = getBody("body");
+//const header = addHeader("header");
+const sidebar = addSidebar("sidebar");
+const main = addMain("main");
+//const footer = addFooter("footer");
+const popup = addPopup("popup");
 
+
+
+//body.before(header);
+body.append(sidebar);
+body.append(main);
+//body.after(footer);
+body.append(popup);
+
+
+//TESTS
+
+//header.textContent = "I am the header";
+
+sidebar.textContent = "I am the sidebar";
+
+main.textContent = "I am the main";
+
+//footer.textContent = "I am the footer";

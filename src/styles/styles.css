@@ -1,0 +1,71 @@
+.header{
+    background-color: lightblue;
+    height: 10vh;
+}
+
+.sidebar{
+    background-color: lightpink;
+    width:15vw;
+    height: 100vh;
+    margin:0px;
+    padding:0px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.topSide {
+    background-color: rgb(255, 255, 255, .5);
+    height:35%;
+    width:100%;
+}
+
+.botSide{
+    background-color: aquamarine;
+    height:65%;
+    width:100%;
+}
+
+.body {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    background-color: antiquewhite;
+    height: 100vh;
+    padding:0px;
+    margin:0px;
+}
+
+.footer {
+    background-color: orange;
+    height: 5vh;
+}
+
+.popup{
+    background-color: lightslategray;
+    width: 50vw;
+    height: 40vh;
+    border-radius: 25px;
+    position:fixed;
+    right: 20%;
+}
+
+
+
+form{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.form{
+    padding:5px;
+}
+
+.form input{
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    height: 22px;
+    padding: 5px;
+}
