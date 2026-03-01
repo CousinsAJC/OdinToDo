@@ -16,14 +16,18 @@
 
 .topSide {
     background-color: rgb(255, 255, 255, .5);
-    height:35%;
+    min-height: 20%;
+    max-height: 35%;
     width:100%;
+    align-content: center;
 }
 
 .botSide{
     background-color: aquamarine;
-    height:65%;
+    min-height:65%;
+    max-height:80%;
     width:100%;
+    align-content: center;
 }
 
 .body {

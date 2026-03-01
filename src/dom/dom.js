@@ -4,6 +4,10 @@ const getBody = function(classToAdd){
     return body;
 }
 
+
+
+
+
 const getPara = function(item){
     const thisPara = document.createElement("p");
     thisPara.textContent = item;
